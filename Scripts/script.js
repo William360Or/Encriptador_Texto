@@ -36,11 +36,11 @@ function desencriptarTexto() {
 
 //Funcion Copiar
 function copy() {
-    let textoEncriptado = document.getElementById("text_encriptado");
-    navigator.clipboard.writeText(textoEncriptado.value)
+    let textoEncriptado = document.getElementById("text_encriptado").value;
+     navigator.clipboard.writeText(textoEncriptado)
         .then(() => {
             let mensaje = document.getElementById(textoEncriptado);
-            mensaje.textContent = "Texto copiado: " + textoEncriptado.value;
+            mensaje.textContent = textoEncriptado.value;
         })
         .catch(err => {
             console.error("Error al copiar: ", err);
@@ -60,7 +60,7 @@ btn_desencriptar.addEventListener('click', function () {
     desencriptarTexto();
 });
 
-btnCopy.addEventListener('click', function () {
+btn_copiar.addEventListener('click', function () {
     copy();
 });
 
