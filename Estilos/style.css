@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap');
+/*varibles*/
 :root{
     --color_principal : #F3F5FC;
     --color_texto :#0a3871;
@@ -8,7 +9,8 @@
     --blanco: #FFFFFF;
 }
 
-*{margin: 0;
+*{
+ margin: 0;
  padding: 0;
  box-sizing: border-box;
  font-family: "Inter";
@@ -16,34 +18,31 @@
 
 body{
     background-color: var(--color_principal);
-}
-.logo{
-    padding: 40px 0 0 84px;
+    
 }
 
-.contenedor_principal{
+.cabecera__logo{
+    padding: 28px 0 44px 84px;
+}
+
+
+.contenido{
     display: flex;
-    justify-items: center;
-    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 80px;
 }
 
-.contenedor_texto{
+.contenido__areatexto{
     display: flex;
-    justify-content: start;
     flex-direction: column;
-    height: 100vh;
-    margin-left: 240px;
-    margin-top: 60px;
-
 }
 
-.texto{
+.contenido__areatexto__textarea{
     background-color: var(--color_principal);
     color: var(--color_texto);
-    width: 670px;
+    width: 700px;
     height: 500px;
-    padding-right: 240px;
     font-size: 32px;
     font-family: "Inter";
     font-style: normal;
@@ -53,12 +52,11 @@ body{
     resize: none;
 }
 
-.texto::placeholder{
-    color: #0a3871;
-    
+.contenido__areatexto__textarea::placeholder{
+    color: var(--color_texto);
 }
 
-.terminos{
+.contenido__areatexto__terminos{
     display: flex;
     align-items: center;
     justify-content: start;
@@ -66,22 +64,18 @@ body{
     margin-bottom: 20px;
 }
 
-.botones{
+.contenido__areatexto__botones{
     display: flex;
-    align-items: center;
     gap: 24px;
 }
 
-.btn_style{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.contenido__areatexto__botones__boton{
     width: 328px;
-    height: 20px;
-    padding: 24px;
+    height: 67px;
     border-radius: 24px;
+    font-weight: 400;
+    cursor: pointer;
 }
-
 #btn_encriptar{
     background-color: var(--color_boton_encriptar);
     border: var(--color_boton_encriptar);
@@ -97,45 +91,50 @@ body{
     cursor: pointer;
 }
 
-.contenedor_encriptado{
-    position: absolute;
+.contenido__tarjeta{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    left: 1000px;
-    top: 40px;
-    width: 400px;
-    height: 760px;
     background-color: var(--blanco);
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    width: 25em;
+    height: 47.5em;
     border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
-.tarjeta_uno{
+.contenido__tarjeta__uno{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.tarjeta_uno h4{
+.contenido__tarjeta__uno h4{
     font-weight: 700;
     font-size: 24px;
     text-align: center;
     padding: 20px;
 }
 
-.tarjeta_uno p{
+.contenido__tarjeta__uno p{
     padding-left: 54px;
     padding-right: 54px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 16px;
     font-weight: 200;
 }
 
-.text_encriptado{
+.contenido__tarjeta__dos{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+}
+
+.contenido__tarjeta__dos__textencriptado{
     width: 300px;
-    height: 585px;
+    height: 520px;
     font-family: "Inter";
     font-style: normal;
     font-size: 24px;
@@ -145,122 +144,87 @@ body{
     resize: none;
 }
 
-.copiar_texto{
+.contenido__tarjeta__dos__btncopiar{
     background-color: var(--color_boton_desencriptar);
     border: 1px solid var(--color_boton_borde_desencriptar);
     color: var(--color_texto);
     cursor: pointer;
-}
-.tarjeta_dos{
-    display: none;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    font-weight: 400;
+    cursor: pointer;
 }
 
-.tarjeta_uno{
+.contenido__tarjeta__uno{
     display: block;
 }
 
+#tarjeta__dos{
+    display: none;
+}
+
+/* tamaño para tablets */
 
 @media(max-width:768px){
 
-    .contenedor_principal{
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+.contenido{
+    margin-top: 50px;
+    flex-direction: column;
+}
 
-    }
-    .contenedor_texto{
-        width: 100vw;
-        margin-left: 50px;
-        margin-top: 50px;
-    
-    }
-    .contenedor_encriptado{
-        left: 60px;
-        width: 675px;
-        height: 250px;
-        top: 800px;
-        align-content: center;
-        justify-content: center;
-    }
+.contenido__tarjeta{
+    width: 43em;
+    height: auto;
+}
 
-    .tarjeta_uno img{
-        display: none;
-    }
+.contenido__tarjeta__uno img{
+    display: none;
+}
 
-    .tarjeta_uno h4{
-        font-weight: 700;
-        font-size: 24px;
-        text-align: center;
+.contenido__tarjeta__dos__textencriptado{
+    width: auto;
+    height: 150px;
+}
 
-    }
-
-    .text_encriptado{
-        width: 600px;
-        height: 133px;
-        font-family: "Inter";
-        font-style: normal;
-        font-size: 24px;
-        font-weight: 200;
-        border-style: none;
-        outline: none;
-        resize: none;
-    }
-    .copiar_texto{
-        width: 600px;
-    }
-    .tarjeta_dos{
-        display: none;
-    }
-
-
+.contenido__tarjeta__dos__btncopiar{
+    width: 624px;
+}
 
 }
 
+/*tamaño para celulares*/
+
 @media(max-width:375px){
-    .contenedor_texto{
-        width: 100%;
-        margin-left: 50px;
 
-    }
+.cabecera__logo{
+    padding-left: 16px;
+}
 
-    .botones{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .btn_style{
-        width: 200px;
-        height: 20px;
-        padding: 24px;
-        margin-right: 100px;
-    }
+.contenido{
+    width: 100%;
+    gap: 50px;
+ }
 
-    .contenedor_encriptado{
-        left: 60px;
-        width: 200px;
-        height: 250px;
-        top: 850px;
-        align-content: center;
-        justify-content: center;
-    }
-    .tarjeta_uno h4{
-        font-weight: 400;
-        font-size: 16px;
-        text-align: center;
-        padding-bottom: 10px;
-    }
+.contenido__areatexto__textarea{
+    width: 346px;
+}
 
-    .text_encriptado{
-        width: 190px;
-        height: 200px;
-    }
-    .copiar_texto{
-        width:200px;
-    }
+.contenido__areatexto__botones{
+    flex-direction: column;
+}
 
+.contenido__tarjeta{
+    width: 90%;
+}
 
-    .tarjeta_dos{
-        display: none;
-    }
+.contenido__tarjeta__dos__textencriptado{
+    width: 90%;
+    height: 150px;
+}
+
+.contenido__tarjeta__dos__btncopiar{
+    width: 279px;
+}
+
 }

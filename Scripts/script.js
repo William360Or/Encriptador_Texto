@@ -1,6 +1,6 @@
 let texto= document.getElementById("texto")
-let tarjeta1=document.getElementById("tarjeta_uno")
-let tarjeta2=document.getElementById("tarjeta_dos")
+let tarjeta1=document.getElementById("tarjeta__uno")
+let tarjeta2=document.getElementById("tarjeta__dos")
 let btn_encriptar=document.getElementById("btn_encriptar")
 let btn_desencriptar=document.getElementById("btn_desencriptar")
 let btn_copiar =document.getElementById("btn_copiar")
@@ -63,3 +63,4 @@ btn_desencriptar.addEventListener('click', function () {
 btnCopy.addEventListener('click', function () {
     copy();
 });
+
